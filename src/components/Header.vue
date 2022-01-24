@@ -62,6 +62,9 @@ export default {
     .my_navbar-toggler {
         border: none;
     }
+    .my_navbar-toggler:focus {
+        box-shadow: none;
+    }
     .my_collapse {
         text-align: center;
     }
@@ -77,6 +80,9 @@ export default {
     }
     .navbar.red {
         background-color: $mandy;
+    }
+    .navbar-dark {
+        transition: background-color 150ms linear;
     }
 }
 </style>
