@@ -1,7 +1,7 @@
 <template>
     <header>
-        <div class="container-fluid p-0">
-            <div class="navbar-container">
+        <div class="container-fluid p-0 position-relative">
+            <div class="navbar-container position-absolute">
                 <nav class="navbar navbar-dark px-3">
                     <a class="navbar-brand my_navbar-brand" href="#">
                         <img src="../assets/img/avada-music-logo.png" alt="">
@@ -21,6 +21,14 @@
                         </div>
                     </div>
                 </nav>
+            </div>
+            <div class="jumbo-container">
+                <h1 class="m-0 mb-4">Untold Stories</h1>
+                <span class="cursive">There is an untold story behind every favorite song.</span>
+                <div class="buttons mt-5">
+                    <button type="button" class="btn my_btn">latest album</button>
+                    <button type="button" class="btn my_btn transparent">live dates</button>
+                </div>
             </div>
         </div>
     </header>
@@ -52,37 +60,73 @@ export default {
     background-image: url('../assets/img/home_slider.jpg');
     background-size: cover;
     background-position: 50%;
-    height: 600px;
-    .my_navbar-brand {
-        width: 15%;
-        img {
-            width: 100%;
+    .navbar-container {
+        top: 0;
+        left: 0;
+        width: 100%;
+        .my_navbar-brand {
+            width: 15%;
+            img {
+                width: 100%;
+            }
+        }
+        .navbar.red {
+            background-color: $mandy;
+        }
+        .navbar-dark {
+            transition: background-color 150ms linear;
+            .my_navbar-toggler {
+                border: none;
+            }
+            .my_navbar-toggler:focus {
+                box-shadow: none;
+            }
+            .my_collapse {
+                text-align: center;
+            }
+            .close {
+                font-size: 1.6em;
+            }
+            button[aria-expanded="true"] > span.navbar-toggler-icon {
+                display: none;
+            }
+
+            button[aria-expanded="false"] > .close {
+                display: none;
+            }
         }
     }
-    .my_navbar-toggler {
-        border: none;
-    }
-    .my_navbar-toggler:focus {
-        box-shadow: none;
-    }
-    .my_collapse {
+    .jumbo-container {
         text-align: center;
-    }
-    .close {
-        font-size: 1.6em;
-    }
-    button[aria-expanded="true"] > span.navbar-toggler-icon {
-        display: none;
-    }
-
-    button[aria-expanded="false"] > .close {
-        display: none;
-    }
-    .navbar.red {
-        background-color: $mandy;
-    }
-    .navbar-dark {
-        transition: background-color 150ms linear;
+        color: $white;
+        padding: 12em 0;
+        h1 {
+            font-size: 6em;
+            font-weight: 700;
+        }
+        .cursive {
+            font-family: $cursive;
+        }
+        .buttons {
+            .my_btn {
+                text-transform: uppercase;
+                background-color: $mandy;
+                color: $white;
+                font-size: 0.8em;
+                border-radius: 0.1em;
+                padding-left: 2em;
+                padding-right: 2em;
+            }
+            .my_btn:hover {
+                background-color: $white;
+                color: $charade;
+            }
+            .transparent {
+                background-color: transparent;
+                border: 1px solid $white;
+                margin-left: 2em;
+            }
+        }
     }
 }
 </style>
