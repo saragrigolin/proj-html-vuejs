@@ -1,13 +1,14 @@
 <template>
     <header>
-        <div class="container-fluid">
+        <div class="container-fluid p-0">
             <div class="navbar-container">
-                <nav class="navbar navbar-dark">
+                <nav class="navbar navbar-dark px-3">
                     <a class="navbar-brand my_navbar-brand" href="#">
                         <img src="../assets/img/avada-music-logo.png" alt="">
                     </a>
-                    <button class="navbar-toggler my_navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
+                    <button class="navbar-toggler my_navbar-toggler" @click="getBackground()" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon open"></span>
+                        <i class="close fas fa-times"></i>
                     </button>
                     <div class="collapse navbar-collapse my_collapse" id="navbarNavAltMarkup">
                         <div class="navbar-nav">
@@ -29,6 +30,17 @@
 // import "bootstrap";
 export default {
     name: "Header",
+    methods: {
+        getBackground(){
+            let myNavbar = document.querySelector('.navbar');
+            let ariaExpanded = document.querySelector(".my_navbar-toggler").getAttribute("aria-expanded");
+            if(ariaExpanded == "true"){
+                myNavbar.classList.add('red');
+            }else {
+                myNavbar.classList.remove('red');
+            }
+        }
+    }
 
 }
 </script>
@@ -52,6 +64,19 @@ export default {
     }
     .my_collapse {
         text-align: center;
+    }
+    .close {
+        font-size: 1.6em;
+    }
+    button[aria-expanded="true"] > span.navbar-toggler-icon {
+        display: none;
+    }
+
+    button[aria-expanded="false"] > .close {
+        display: none;
+    }
+    .navbar.red {
+        background-color: $mandy;
     }
 }
 </style>
