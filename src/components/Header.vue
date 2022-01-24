@@ -74,7 +74,7 @@ export default {
             background-color: $mandy;
         }
         .navbar-dark {
-            transition: background-color 150ms linear;
+            transition: background-color 300ms ease-out;
             .my_navbar-toggler {
                 border: none;
             }
