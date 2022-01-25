@@ -80,6 +80,26 @@
         <div class="video-container py-5 d-flex justify-content-center">
             <div class="video-content w-30">
                 <p>“I just listened to it and said to myself, “Man, I really love this album.” Still, today, it just sounds so fresh. It sounds full of ideas. These guys knew what they were doing. They’re good. And they’re inventive. I haven’t heard anything this year that’s as inventive. I don’t really expect to.”</p>
+                <img src="../assets/img/band_interview_play_icon.png" alt="" class="mt-4">
+            </div>
+        </div>
+        <div class="main-container py-5">
+            <div class="main-content d-flex justify-content-center flex-column w-50">
+                <div class="title-container">
+                    <h2 class="title">Live Dates</h2>
+                </div>
+                <div class="subtitle-container mt-3 pt-4">
+                    <span class="subtitle">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quam alias repudiandae quisquam laboriosam natus, ut accusantium impedit maxime.</span>
+                </div>
+            </div>
+            <div class="container">
+                <ul class="date-list px-0 py-4">
+                    <li class="date-list-item"><i class="fas fa-plus"></i><span>17/08/2020 gem festival 2020 anakalia, georgia</span></li>
+                    <li class="date-list-item"><i class="fas fa-plus"></i><span>24/09/2020 groovegest dominical republic</span></li>
+                    <li class="date-list-item"><i class="fas fa-plus"></i><span>31/10/2020 oasis festival 2020 marrakech, marocco</span></li>
+                    <li class="date-list-item"><i class="fas fa-plus"></i><span>07/11/2020 moga festival - essaouria, marocco</span></li>
+                    <li class="date-list-item"><i class="fas fa-plus"></i><span>10/12/2020 envision festival - uvita, costa rica</span></li>
+                </ul>
             </div>
         </div>
 
@@ -205,6 +225,7 @@ export default {
     }
     .video-container {
         background-image: url('../assets/img/home-testimonial-parallax.jpg');
+        background-position-y: 50%;
         .w-30 {
             width: 30%;
         }
@@ -212,7 +233,32 @@ export default {
             text-align: center;
             color: $white;
             font-style: italic;
+            line-height: 1.8em;
             // font-family: $fontFamily;
+            padding: 7em 0;
+            img {
+                width: 15%;
+            }
+        }
+    }
+    .date-list {
+        list-style-type: none;
+        width: 70%;
+        margin: 0 auto;
+        .date-list-item {
+            text-transform: uppercase;
+            padding: 1em 1em;
+            margin-bottom: 0.5em;
+            display: flex;
+            align-items: center;
+            background-color: $backgroundMusicIsLife;
+            span {
+                color: $mandy;
+                margin-left: 1em;
+            }
+            .fa-plus {
+                font-size: 0.6em;
+            }
         }
     }
 </style>
