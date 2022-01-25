@@ -13,4 +13,5 @@
 .my_btn:hover, .transparent:hover {
     background-color: $white !important;
     color: $charade !important;
+    transition: background-color, color 0.3s linear;
 }
