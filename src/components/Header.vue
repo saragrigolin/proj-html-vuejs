@@ -2,7 +2,7 @@
     <header>
         <div class="container-fluid my_fluid p-0 position-relative">
             <div class="navbar-container position-fixed">
-                <nav class="navbar navbar-dark px-3">
+                <nav class="navbar navbar-dark px-5">
                     <a class="navbar-brand my_navbar-brand" href="#">
                         <img src="../assets/img/avada-music-logo.png" alt="">
                     </a>
