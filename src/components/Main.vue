@@ -93,7 +93,7 @@
                 </div>
             </div>
             <div class="container">
-                <ul class="date-list px-0 py-4">
+                <ul class="date-list px-0 py-4 w-80">
                     <li class="date-list-item"><i class="fas fa-plus"></i><span>17/08/2020 gem festival 2020 anakalia, georgia</span></li>
                     <li class="date-list-item"><i class="fas fa-plus"></i><span>24/09/2020 groovegest dominical republic</span></li>
                     <li class="date-list-item"><i class="fas fa-plus"></i><span>31/10/2020 oasis festival 2020 marrakech, marocco</span></li>
@@ -196,17 +196,9 @@ export default {
             }
         }
         .all-news.my_btn {
-            background-color: $mandy;
-            color: $white;
-            text-transform: uppercase;
             text-align: center;
-            cursor: pointer;
             border-radius: 0;
             width: 100%;
-        }
-        .all-news.my_btn:hover {
-            background-color: $white;
-            color: $charade;
         }
     }
     .main-container.music {
@@ -243,21 +235,29 @@ export default {
     }
     .date-list {
         list-style-type: none;
-        width: 70%;
         margin: 0 auto;
         .date-list-item {
             text-transform: uppercase;
-            padding: 1em 1em;
+            padding: 1em 1.5em;
             margin-bottom: 0.5em;
             display: flex;
             align-items: center;
             background-color: $backgroundMusicIsLife;
+            cursor: pointer;
             span {
                 color: $mandy;
-                margin-left: 1em;
+                margin-left: 0.5em;
+                font-size: 2em;
             }
             .fa-plus {
-                font-size: 0.6em;
+                font-size: 1.5em;
+                padding: 0.2em;
+            }
+        }
+        .date-list-item:hover {
+            background-color: $liHover;
+            .fa-plus {
+                background-color: $mandy;
             }
         }
     }
