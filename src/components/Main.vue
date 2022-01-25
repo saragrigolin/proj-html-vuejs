@@ -83,7 +83,7 @@
                 <img src="../assets/img/band_interview_play_icon.png" alt="" class="mt-4">
             </div>
         </div>
-        <div class="main-container py-5">
+        <div class="main-container pt-5">
             <div class="main-content d-flex justify-content-center flex-column w-50">
                 <div class="title-container">
                     <h2 class="title">Live Dates</h2>
@@ -92,8 +92,8 @@
                     <span class="subtitle">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quam alias repudiandae quisquam laboriosam natus, ut accusantium impedit maxime.</span>
                 </div>
             </div>
-            <div class="container">
-                <ul class="date-list px-0 py-4 w-80">
+            <div class="container p-5">
+                <ul class="date-list p-0 w-80">
                     <li class="date-list-item" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
                         <div class="li-header">
                             <i class="fas fa-plus"></i><span>17/08/2020 gem festival 2020 anakalia, georgia</span>
@@ -182,6 +182,9 @@
                     
                 </ul>
             </div>
+            <button class="all-news btn my_btn py-5">
+                <span>view all live dates</span>
+            </button>
         </div>
 
     </main>
@@ -352,6 +355,7 @@ export default {
             background-color: $liHover;
             .fa-plus {
                 background-color: $mandy;
+                transition: background-color 0.3s linear;
             }
         }
     }
