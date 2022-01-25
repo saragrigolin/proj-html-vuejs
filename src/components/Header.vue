@@ -29,8 +29,8 @@
                 <h1 class="m-0 mb-4">Untold Stories</h1>
                 <span class="cursive">There is an untold story behind every favorite song.</span>
                 <div class="buttons mt-5">
-                    <button type="button" class="btn my_btn">latest album</button>
-                    <button type="button" class="btn my_btn transparent">live dates</button>
+                    <button type="button" class="my_btn btn">latest album</button>
+                    <button type="button" class="transparent btn">live dates</button>
                 </div>
             </div>
         </div>
@@ -131,18 +131,11 @@ export default {
             font-size: 1.5em;
         }
         .buttons {
-            .my_btn {
-                text-transform: uppercase;
-                background-color: $mandy;
-                color: $white;
+            .my_btn, .transparent {
                 font-size: 1.5em;
                 border-radius: 0.1em;
                 padding: 0.7em 2em;
                 font-weight: 600;
-            }
-            .my_btn:hover {
-                background-color: $white;
-                color: $charade;
             }
             .transparent {
                 background-color: transparent;
