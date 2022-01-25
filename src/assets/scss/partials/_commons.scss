@@ -1,4 +1,16 @@
-html {
+* {
     font-size: 100%;
     font-family: $fontFamily;
+}
+
+.my_btn, .transparent {
+    text-transform: uppercase;
+    color: $white !important;
+}
+.my_btn {
+    background-color: $mandy !important;
+}
+.my_btn:hover, .transparent:hover {
+    background-color: $white !important;
+    color: $charade !important;
 }
