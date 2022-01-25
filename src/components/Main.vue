@@ -94,8 +94,9 @@ export default {
         .main-content {
             margin: 0 auto;
             text-align: center;
-            .title-container {
+            .title-container .title {
                 font-weight: 700;
+                font-size: 3em;
             }
             .subtitle-container::before {
                 content: '';
@@ -113,7 +114,7 @@ export default {
                 position: relative;
                 .subtitle {
                 color: $text;
-                font-size: 0.8em;
+                font-size: 1em;
             }
             }
         }
@@ -174,10 +175,10 @@ export default {
             background-image: url('../assets/img/blog-post2-400x600.jpg');
         }
         .card-1, .card-4 {
-            height: 300px;
+            padding-top: calc((80rem - 4rem) / 4);
         }
         .card-2, .card-3, .card-5, .card-6 {
-            height: 600px;
+            padding-top: calc((80rem - 0rem) / 2);
         }
     }
 </style>
