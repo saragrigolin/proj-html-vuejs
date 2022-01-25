@@ -42,15 +42,6 @@
 export default {
     name: "Header",
     methods: {
-        getBackground(){
-            let myNavbar = document.querySelector('.navbar');
-            let ariaExpanded = document.querySelector(".my_navbar-toggler").getAttribute("aria-expanded");
-            if(ariaExpanded == "true"){
-                myNavbar.classList.add('red');
-            }else {
-                myNavbar.classList.remove('red');
-            }
-        }
     }
 
 }
@@ -121,10 +112,6 @@ export default {
             .close {
                 font-size: 1.6em;
             }
-            // button[aria-expanded="true"] > span.navbar-toggler-icon {
-            //     display: none;
-            // }
-
             button[aria-expanded="false"] > .close {
                 display: none;
             }
@@ -139,7 +126,8 @@ export default {
             font-weight: 700;
         }
         .cursive {
-            font-family: $cursive;
+            font-family: $fontFamily;
+            font-style: italic;
             font-size: 1.5em;
         }
         .buttons {
