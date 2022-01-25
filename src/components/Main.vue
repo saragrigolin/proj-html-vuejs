@@ -24,50 +24,68 @@
                     <div class="col-8 p-0">
                         <div class="row m-0">
                             <div class="col-12 p-3">
-                                <div class="card-1">
-                                    <div class="container-text d-flex flex-column p-4">
+                                <div class="card-1 position-relative" @mouseover="getHover(0)" @mouseleave="removeHover(0)">
+                                    <div class="container-text active-text d-flex flex-column p-4">
                                         <span class="card-title">Technology and music</span>
                                         <span class="card-subtitle">Sed sit amet sem turpis. Curabitur cursus lacinia est at interdum risus id condimentum.</span>
+                                    </div>
+                                    <div class="hover position-absolute not-active d-flex justify-content-center align-items-center">
+                                        <span>Tecnology and music</span>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-6 p-3">
-                                <div class="card-2">
-                                    <div class="container-text d-flex flex-column p-4">
+                                <div class="card-2" @mouseover="getHover(1)" @mouseleave="removeHover(1)">
+                                    <div class="container-text active-text d-flex flex-column p-4">
                                         <span class="card-title">Technology and music</span>
                                         <span class="card-subtitle">Sed sit amet sem turpis. Curabitur cursus lacinia est at interdum risus id condimentum.</span>
+                                    </div>
+                                    <div class="hover position-absolute not-active d-flex justify-content-center align-items-center">
+                                        <span>Tecnology and music</span>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-6 p-3">
-                                <div class="card-3">
-                                    <div class="container-text d-flex flex-column p-4">
+                                <div class="card-3" @mouseover="getHover(2)" @mouseleave="removeHover(2)">
+                                    <div class="container-text active-text d-flex flex-column p-4">
                                         <span class="card-title">Technology and music</span>
                                         <span class="card-subtitle">Sed sit amet sem turpis. Curabitur cursus lacinia est at interdum risus id condimentum.</span>
+                                    </div>
+                                    <div class="hover position-absolute not-active d-flex justify-content-center align-items-center">
+                                        <span>Tecnology and music</span>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-12 p-3">
-                                <div class="card-4">
-                                    <div class="container-text d-flex flex-column p-4">
+                                <div class="card-4" @mouseover="getHover(3)" @mouseleave="removeHover(3)">
+                                    <div class="container-text active-text d-flex flex-column p-4">
                                         <span class="card-title">Technology and music</span>
                                         <span class="card-subtitle">Sed sit amet sem turpis. Curabitur cursus lacinia est at interdum risus id condimentum.</span>
+                                    </div>
+                                    <div class="hover position-absolute not-active d-flex justify-content-center align-items-center">
+                                        <span>Tecnology and music</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-4 p-3">
-                        <div class="card-5">
-                            <div class="container-text d-flex flex-column p-4">
+                        <div class="card-5" @mouseover="getHover(4)" @mouseleave="removeHover(4)">
+                            <div class="container-text active-text d-flex flex-column p-4">
                                 <span class="card-title">Technology and music</span>
                                 <span class="card-subtitle">Sed sit amet sem turpis. Curabitur cursus lacinia est at interdum risus id condimentum.</span>
                             </div>
+                            <div class="hover position-absolute not-active d-flex justify-content-center align-items-center">
+                                <span>Tecnology and music</span>
+                            </div>
                         </div>
-                        <div class="card-6">
-                            <div class="container-text d-flex flex-column p-4">
+                        <div class="card-6" @mouseover="getHover(5)" @mouseleave="removeHover(5)">
+                            <div class="container-text active-text d-flex flex-column p-4">
                                 <span class="card-title">Technology and music</span>
                                 <span class="card-subtitle">Sed sit amet sem turpis. Curabitur cursus lacinia est at interdum risus id condimentum.</span>
+                            </div>
+                            <div class="hover position-absolute not-active d-flex justify-content-center align-items-center">
+                                <span>Tecnology and music</span>
                             </div>
                         </div>
                     </div>
@@ -193,6 +211,28 @@
 <script>
 export default {
     name: "Main",
+    methods: {
+        removeHover(index){
+            let hover = document.querySelectorAll('.hover');
+            let text = document.querySelectorAll('.container-text');
+            if (hover[index].classList.contains('active')){
+                hover[index].classList.remove('active');
+                hover[index].classList.add('not-active');
+                text[index].classList.add('active-text');
+                text[index].classList.remove('not-active-text');
+            }
+        },
+        getHover(index){
+            let hover = document.querySelectorAll('.hover');
+            let text = document.querySelectorAll('.container-text');
+            if (hover[index].classList.contains('not-active')){
+                hover[index].classList.remove('not-active');
+                hover[index].classList.add('active');
+                text[index].classList.remove('active-text');
+                text[index].classList.add('not-active-text');
+            }
+        }
+    }
 
 }
 </script>
@@ -235,6 +275,7 @@ export default {
                 background-size: cover;
                 background-position: center;
                 position: relative;
+                overflow: hidden;
                 img {
                     width: 100%;
                 }
@@ -242,7 +283,7 @@ export default {
                     background-color: $backgroundMusicIsLife;
                     width: 100%;
                     position: absolute;
-                    bottom: 0;
+                    transition: all 0.3s linear;
                     .card-title {
                         color: $mandy;
                         font-weight: 600;
@@ -250,6 +291,28 @@ export default {
                     .card-subtitle {
                         color: $text;
                     }
+                }
+                .active-text {
+                        bottom: 0;
+                    }
+                .not-active-text {
+                    bottom: -100%;
+                }
+                .hover {
+                    height: 100%;
+                    width: 100%;
+                    top: 0;
+                    background-color: $mandy;
+                    opacity: 0.8;
+                    transition: all 0.3s linear;
+                    font-size: 2em;
+                }
+                .not-active {
+                    left: -100%;
+
+                }
+                .active {
+                    left: 0;
                 }
             }
             .card-1 {
