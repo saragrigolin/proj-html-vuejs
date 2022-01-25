@@ -10,7 +10,7 @@
                 </div>
             </div>
         </div>
-        <div class="main-container py-5">
+        <div class="main-container pt-5">
             <div class="main-content d-flex justify-content-center flex-column w-50">
                 <div class="title-container">
                     <h2 class="title">Latest Band News</h2>
@@ -19,7 +19,7 @@
                     <span class="subtitle">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quam alias repudiandae quisquam laboriosam natus, ut accusantium impedit maxime.</span>
                 </div>
             </div>
-            <div class="news-container container pt-5">
+            <div class="news-container container py-5">
                 <div class="row m-0">
                     <div class="col-8 p-0">
                         <div class="row m-0">
@@ -70,11 +70,20 @@
                                 <span class="card-subtitle">Sed sit amet sem turpis. Curabitur cursus lacinia est at interdum risus id condimentum.</span>
                             </div>
                         </div>
-                        
                     </div>
                 </div>
             </div>
+            <button class="all-news btn my_btn py-5">
+                <span>view all latest news</span>
+            </button>
         </div>
+        <div class="video-container py-5 d-flex justify-content-center">
+            <div class="video-content w-30">
+                <p>“I just listened to it and said to myself, “Man, I really love this album.” Still, today, it just sounds so fresh. It sounds full of ideas. These guys knew what they were doing. They’re good. And they’re inventive. I haven’t heard anything this year that’s as inventive. I don’t really expect to.”</p>
+            </div>
+        </div>
+
+
     </main>
 </template>
 
@@ -118,6 +127,67 @@ export default {
             }
             }
         }
+        .news-container {
+            div[class*="card"] {
+                background-size: cover;
+                background-position: center;
+                position: relative;
+                img {
+                    width: 100%;
+                }
+                .container-text {
+                    background-color: $backgroundMusicIsLife;
+                    width: 100%;
+                    position: absolute;
+                    bottom: 0;
+                    .card-title {
+                        color: $mandy;
+                        font-weight: 600;
+                    }
+                    .card-subtitle {
+                        color: $text;
+                    }
+                }
+            }
+            .card-1 {
+                background-image: url('../assets/img/blog_music_techo-800x400.jpg');
+            }
+            .card-2 {
+                background-image: url('../assets/img/blog-post3-600x900.jpg');
+            }
+            .card-3 {
+                background-image: url('../assets/img/blog-post4-400x600.jpg');
+            }
+            .card-4 {
+                background-image: url('../assets/img/blog_flavor_rock-800x400.jpg');
+            }
+            .card-5 {
+                background-image: url('../assets/img/blog-post1-600x900.jpg');
+                margin-bottom: 2rem;
+            }
+            .card-6 {
+                background-image: url('../assets/img/blog-post2-400x600.jpg');
+            }
+            .card-1, .card-4 {
+                padding-top: calc((80rem - 4rem) / 4);
+            }
+            .card-2, .card-3, .card-5, .card-6 {
+                padding-top: calc((80rem - 0rem) / 2);
+            }
+        }
+        .all-news.my_btn {
+            background-color: $mandy;
+            color: $white;
+            text-transform: uppercase;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 0;
+            width: 100%;
+        }
+        .all-news.my_btn:hover {
+            background-color: $white;
+            color: $charade;
+        }
     }
     .main-container.music {
         background-color: $backgroundMusicIsLife;
@@ -133,52 +203,16 @@ export default {
         left: 50%;
         transform: translateX(-50%);
     }
-    .news-container {
-        div[class*="card"] {
-            background-size: cover;
-            background-position: center;
-            position: relative;
-            img {
-                width: 100%;
-            }
-            .container-text {
-                background-color: $backgroundMusicIsLife;
-                width: 100%;
-                position: absolute;
-                bottom: 0;
-                .card-title {
-                    color: $mandy;
-                    font-weight: 600;
-                }
-                .card-subtitle {
-                    color: $text;
-                }
-            }
+    .video-container {
+        background-image: url('../assets/img/home-testimonial-parallax.jpg');
+        .w-30 {
+            width: 30%;
         }
-        .card-1 {
-            background-image: url('../assets/img/blog_music_techo-800x400.jpg');
-        }
-        .card-2 {
-            background-image: url('../assets/img/blog-post3-600x900.jpg');
-        }
-        .card-3 {
-            background-image: url('../assets/img/blog-post4-400x600.jpg');
-        }
-        .card-4 {
-            background-image: url('../assets/img/blog_flavor_rock-800x400.jpg');
-        }
-        .card-5 {
-            background-image: url('../assets/img/blog-post1-600x900.jpg');
-            margin-bottom: 2rem;
-        }
-        .card-6 {
-            background-image: url('../assets/img/blog-post2-400x600.jpg');
-        }
-        .card-1, .card-4 {
-            padding-top: calc((80rem - 4rem) / 4);
-        }
-        .card-2, .card-3, .card-5, .card-6 {
-            padding-top: calc((80rem - 0rem) / 2);
+        .video-content {
+            text-align: center;
+            color: $white;
+            font-style: italic;
+            // font-family: $fontFamily;
         }
     }
 </style>
