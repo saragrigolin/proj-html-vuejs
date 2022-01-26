@@ -3,6 +3,10 @@
     font-family: $fontFamily;
 }
 
+body {
+    background-color: $backgroundMain !important;
+}
+
 .my_btn, .transparent {
     text-transform: uppercase;
     color: $white !important;
@@ -13,5 +17,5 @@
 .my_btn:hover, .transparent:hover {
     background-color: $white !important;
     color: $charade !important;
-    transition: background-color, color 0.3s linear;
+    transition: all 0.5s linear;
 }
