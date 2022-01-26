@@ -4,15 +4,15 @@
             <a class="navbar-brand my_navbar-brand" href="#">
                 <img src="../assets/img/avada-music-logo.png" alt="">
             </a>
-            <button class="navbar-toggler my_navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler my_navbar-toggler" @click="getCollapse()">
                 <span class="navbar-toggler-icon open"></span>
             </button>
-            <div class="collapse navbar-collapse my_collapse" id="navbarNavAltMarkup">
-                <button class="navbar-toggler my_navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="navbar-collapse my_collapse">
+                <button class="navbar-toggler my_navbar-toggler" @click="getCollapse()">
                     <i class="close fas fa-times"></i>
                 </button>
                 <div class="navbar-nav my_navbar-nav">
-                    <a v-for="(navLink, index) in navLinks" :key="index" :href="navLink.href" class="nav-item nav-link" :class="(navLink.isActive) ? 'active' : ''" @click="closeCollapse()">{{navLink.name}}</a>
+                    <a v-for="(navLink, index) in navLinks" :key="index" :href="navLink.href" class="nav-item nav-link" :class="(navLink.isActive) ? 'active' : ''" @click="getCollapse()">{{navLink.name}}</a>
                     <!-- <a class="nav-item nav-link active" href="#">Home</a>
                     <a class="nav-item nav-link" href="#">Meet the brand</a>
                     <a class="nav-item nav-link" href="#">Live dates</a>
@@ -65,17 +65,22 @@ export default {
         }
     },
     methods: {
-        closeCollapse(){
+        getCollapse(){
             let collapse = document.querySelector('.my_collapse');
-            collapse.classList.remove("show");
+            if(collapse.classList.contains("show")){
+                collapse.classList.remove("show");
+            } else {
+                collapse.classList.add("show");
+            }
         }
-    }
 
+    }
 }
 </script>
 
 <style lang="scss">
 @import "../assets/scss/style.scss";
+// navbar
 .navbar-container {
     top: 0;
     left: 0;
@@ -91,8 +96,6 @@ export default {
         }
     }
     .navbar-dark {
-        transition: background-color 700ms ease;
-        position: relative;
         .my_navbar-toggler {
             border: none;
         }
@@ -102,16 +105,23 @@ export default {
         .my_collapse {
             position: absolute;
             text-align: center;
+            visibility: hidden;
+            opacity: 0;
             height: 100vh;
             width: 100%;
             top: 0;
             left: 0;
             background-color: $mandy;
+            transition: all 0.3s linear;
+            &.show {
+                visibility: visible;
+                opacity: 1;
+            }
             .my_navbar-toggler {
                 position: absolute;
                 top: 0;
                 right: 0;
-                margin: 1em 2.5em;
+                margin: 0.8em 2.5em;
             }
             .my_navbar-nav {
                 position: absolute;
@@ -124,14 +134,8 @@ export default {
                 font-weight: 300;
             }
         }
-        .collapsing {
-            transition: none;
-        }
         .close {
             font-size: 1.6em;
-        }
-        button[aria-expanded="false"] > .close {
-            display: none;
         }
     }
 }
