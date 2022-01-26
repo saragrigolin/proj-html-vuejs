@@ -56,6 +56,10 @@ export default {
                 width: 100%;
             }
         }
+        a:hover {
+            color: $white;
+            transition: color 0.3s linear;
+        }
     }
 }
 .footer-top, .footer-bottom {
@@ -68,10 +72,6 @@ export default {
                 font-size: 0.8em;
                 &.active {
                     color: $white;
-                }
-                &:hover {
-                    color: $white;
-                    transition: color 0.3s linear;
                 }
             }
         }
@@ -94,6 +94,11 @@ export default {
             width: 3em;
             height: 3em;
             background-color: $backgroundMusicIsLife;
+            &:hover {
+                color: $backgroundMain;
+                background-color: $mandy;
+                transition: all 0.5s linear;
+            }
         }
     }
 }
