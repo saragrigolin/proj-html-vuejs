@@ -34,7 +34,11 @@
                 </div>
                 <ul class="socials d-flex align-items-center m-0 p-0">
                     <!-- creo v-for per i social -->
-                    <li v-for="(footerSocial, index) in footerSocials" :key="index" class="px-2"><a :href="footerSocial.href"><i :class="`fab fa-${footerSocial.class}`"></i></a></li>
+                    <li v-for="(footerSocial, index) in footerSocials" :key="index" class="px-2">
+                        <a :href="footerSocial.href">
+                            <i :class="`fab fa-${footerSocial.class}`"></i>
+                        </a>
+                    </li>
                     <!-- <li class="pe-2"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
                     <li class="px-2"><a href="#"><i class="fab fa-twitter"></i></a></li>
                     <li class="px-2"><a href="#"><i class="fab fa-instagram"></i></a></li>
