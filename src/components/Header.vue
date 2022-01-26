@@ -60,10 +60,11 @@ export default {
     .jumbo-container {
         text-align: center;
         color: $white;
-        padding: 12em 0;
+        padding: calc(12em - 40px) 0;
         h1 {
             font-size: 8em;
             font-weight: 700;
+            line-height: 0.8em;
         }
         .cursive {
             font-family: $fontFamily;
