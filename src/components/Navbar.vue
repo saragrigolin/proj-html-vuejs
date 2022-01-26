@@ -121,7 +121,7 @@ export default {
                 position: absolute;
                 top: 0;
                 right: 0;
-                margin: 0.8em 2.5em;
+                margin: 1.2em 2.5em;
             }
             .my_navbar-nav {
                 position: absolute;
