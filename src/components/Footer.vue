@@ -46,6 +46,7 @@
                 </ul>
             </div>
         </div>
+        <button type="button" class="arrow-fixed my_btn btn"><a href="#"><i class="fas fa-chevron-up"></i></a></button>
         <!-- /footer-bottom -->
     </footer>
 </template>
@@ -106,6 +107,19 @@ export default {
                 },
             ]
         }
+    },
+    created(){
+        setTimeout(() => {
+            let myArrow = document.querySelector('.arrow-fixed');
+            window.onscroll = function() {
+            "use strict";
+            if (document.body.scrollTop >= 400 || document.documentElement.scrollTop >= 400) {
+                myArrow.classList.add("show");
+            } else {
+                myArrow.classList.remove("show");
+            }
+            };
+        }, 300);
     }
 
 }
@@ -168,5 +182,25 @@ export default {
             }
         }
     }
+}
+.arrow-fixed {
+    display: none !important;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 1000;
+    margin: 0 2em;
+    padding: 0.5em 1em;
+    border-radius: 0 !important;
+    a {
+        color: $text;
+        text-decoration: none;
+        &:hover {
+            color: $backgroundMain;
+        }
+    }
+}
+.show {
+    display: inline-block !important;
 }
 </style>
