@@ -10,7 +10,7 @@
                 </div>
             </div>
         </div>
-        <div class="main-container pt-5">
+        <div class="main-container pt-5" id="latestnews">
             <div class="main-content d-flex justify-content-center flex-column w-50">
                 <div class="title-container">
                     <h2 class="title">Latest Band News</h2>
@@ -30,40 +30,40 @@
                                         <span class="card-subtitle">Sed sit amet sem turpis. Curabitur cursus lacinia est at interdum risus id condimentum.</span>
                                     </div>
                                     <div class="hover position-absolute not-active d-flex justify-content-center align-items-center">
-                                        <span>Tecnology and music</span>
+                                        <span>Technology and music</span>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-6 p-3">
                                 <div class="card-2" @mouseover="getHover(1)" @mouseleave="removeHover(1)">
                                     <div class="container-text active-text d-flex flex-column p-4">
-                                        <span class="card-title">Technology and music</span>
+                                        <span class="card-title">While my guitar gently weep</span>
                                         <span class="card-subtitle">Sed sit amet sem turpis. Curabitur cursus lacinia est at interdum risus id condimentum.</span>
                                     </div>
                                     <div class="hover position-absolute not-active d-flex justify-content-center align-items-center">
-                                        <span>Tecnology and music</span>
+                                        <span>While my guitar gently weep</span>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-6 p-3">
                                 <div class="card-3" @mouseover="getHover(2)" @mouseleave="removeHover(2)">
                                     <div class="container-text active-text d-flex flex-column p-4">
-                                        <span class="card-title">Technology and music</span>
+                                        <span class="card-title">It just sounds better</span>
                                         <span class="card-subtitle">Sed sit amet sem turpis. Curabitur cursus lacinia est at interdum risus id condimentum.</span>
                                     </div>
                                     <div class="hover position-absolute not-active d-flex justify-content-center align-items-center">
-                                        <span>Tecnology and music</span>
+                                        <span>It just sounds better</span>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-12 p-3">
                                 <div class="card-4" @mouseover="getHover(3)" @mouseleave="removeHover(3)">
                                     <div class="container-text active-text d-flex flex-column p-4">
-                                        <span class="card-title">Technology and music</span>
+                                        <span class="card-title">The flavor of rock</span>
                                         <span class="card-subtitle">Sed sit amet sem turpis. Curabitur cursus lacinia est at interdum risus id condimentum.</span>
                                     </div>
                                     <div class="hover position-absolute not-active d-flex justify-content-center align-items-center">
-                                        <span>Tecnology and music</span>
+                                        <span>The flavor of rock</span>
                                     </div>
                                 </div>
                             </div>
@@ -72,20 +72,20 @@
                     <div class="col-4 p-3">
                         <div class="card-5" @mouseover="getHover(4)" @mouseleave="removeHover(4)">
                             <div class="container-text active-text d-flex flex-column p-4">
-                                <span class="card-title">Technology and music</span>
+                                <span class="card-title">Taking it back to the old school</span>
                                 <span class="card-subtitle">Sed sit amet sem turpis. Curabitur cursus lacinia est at interdum risus id condimentum.</span>
                             </div>
                             <div class="hover position-absolute not-active d-flex justify-content-center align-items-center">
-                                <span>Tecnology and music</span>
+                                <span>Taking it back to the old school</span>
                             </div>
                         </div>
                         <div class="card-6" @mouseover="getHover(5)" @mouseleave="removeHover(5)">
                             <div class="container-text active-text d-flex flex-column p-4">
-                                <span class="card-title">Technology and music</span>
+                                <span class="card-title">Sharing the stage with a legend</span>
                                 <span class="card-subtitle">Sed sit amet sem turpis. Curabitur cursus lacinia est at interdum risus id condimentum.</span>
                             </div>
                             <div class="hover position-absolute not-active d-flex justify-content-center align-items-center">
-                                <span>Tecnology and music</span>
+                                <span>Sharing the stage with a legend</span>
                             </div>
                         </div>
                     </div>
@@ -98,10 +98,18 @@
         <div class="video-container py-5 d-flex justify-content-center">
             <div class="video-content w-30">
                 <p>“I just listened to it and said to myself, “Man, I really love this album.” Still, today, it just sounds so fresh. It sounds full of ideas. These guys knew what they were doing. They’re good. And they’re inventive. I haven’t heard anything this year that’s as inventive. I don’t really expect to.”</p>
-                <img src="../assets/img/band_interview_play_icon.png" alt="" class="mt-4">
+                <img src="../assets/img/band_interview_play_icon.png" alt="" class="mt-4" @click="getVideo()">
+            </div>
+            <div class="youtube-container not-active position-fixed justify-content-center align-items-center">
+                <button class="my_btn btn" @click="getVideo()">chiudi</button>
+                <div class="frame">
+                    <iframe width="1000" height="600"
+                    src="https://www.youtube.com/embed/PBfP8Ltelu4">
+                    </iframe>
+                </div>
             </div>
         </div>
-        <div class="main-container pt-5">
+        <div class="main-container pt-5" id="livedates">
             <div class="main-content d-flex justify-content-center flex-column w-50">
                 <div class="title-container">
                     <h2 class="title">Live Dates</h2>
@@ -220,6 +228,11 @@ export default {
                 hover[index].classList.add('not-active');
                 text[index].classList.add('active-text');
                 text[index].classList.remove('not-active-text');
+            } else {
+                hover[index].classList.remove('not-active');
+                hover[index].classList.add('active');
+                text[index].classList.remove('active-text');
+                text[index].classList.add('not-active-text');
             }
         },
         getHover(index){
@@ -230,6 +243,17 @@ export default {
                 hover[index].classList.add('active');
                 text[index].classList.remove('active-text');
                 text[index].classList.add('not-active-text');
+            }
+        },
+        getVideo(){
+            let youtubeContainer = document.querySelector('.youtube-container');
+            if (youtubeContainer.classList.contains('not-active')){
+                youtubeContainer.classList.remove('not-active');
+                youtubeContainer.classList.add('active');
+            } else {
+                console.log(youtubeContainer);
+                youtubeContainer.classList.add('not-active');
+                youtubeContainer.classList.remove('active');
             }
         }
     }
@@ -305,7 +329,7 @@ export default {
                     background-color: $mandy;
                     opacity: 0.8;
                     transition: all 0.3s linear;
-                    font-size: 2em;
+                    font-size: 1.6em;
                 }
                 .not-active {
                     left: -100%;
@@ -376,6 +400,42 @@ export default {
             padding: 7em 0;
             img {
                 width: 15%;
+                cursor: pointer;
+            }
+        }
+        .youtube-container {
+            z-index: 99;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            .my_btn {
+                z-index: 999;
+                position: absolute;
+                top: 0;
+                right: 0;
+                margin: 2em;
+                
+            }
+            .frame {
+                z-index: 900;
+            }
+            &.not-active {
+                display: none;
+            }
+            &.active {
+                display: flex;
+            }
+            &:before {
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                content: '';
+                height: 100vh;
+                width: 100%;
+                background-color: $text;
+                opacity: 0.7;
             }
         }
     }
@@ -416,9 +476,10 @@ export default {
         }
         .date-list-item:hover {
             background-color: $liHover;
+            transition: background-color 0.5s linear;
             .fa-plus {
                 background-color: $mandy;
-                transition: background-color 0.3s linear;
+                transition: background-color 0.5s linear;
             }
         }
     }
