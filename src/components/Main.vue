@@ -1,5 +1,6 @@
 <template>
     <main>
+        <!-- sezione music -->
         <div class="main-container music py-5">
             <div class="main-content d-flex justify-content-center flex-column w-50">
                 <div class="title-container">
@@ -10,6 +11,8 @@
                 </div>
             </div>
         </div>
+        <!-- /sezione music -->
+        <!-- sezione latest news -->
         <div class="main-container pt-5" id="latestnews">
             <div class="main-content d-flex justify-content-center flex-column w-50">
                 <div class="title-container">
@@ -95,6 +98,8 @@
                 <span>view all latest news</span>
             </button>
         </div>
+        <!-- /sezione latest news -->
+        <!-- sezione video -->
         <div class="video-container py-5 d-flex justify-content-center">
             <div class="video-content w-30">
                 <p>“I just listened to it and said to myself, “Man, I really love this album.” Still, today, it just sounds so fresh. It sounds full of ideas. These guys knew what they were doing. They’re good. And they’re inventive. I haven’t heard anything this year that’s as inventive. I don’t really expect to.”</p>
@@ -109,6 +114,8 @@
                 </div>
             </div>
         </div>
+        <!-- /sezione video -->
+        <!-- sezione live dates -->
         <div class="main-container pt-5" id="livedates">
             <div class="main-content d-flex justify-content-center flex-column w-50">
                 <div class="title-container">
@@ -212,6 +219,7 @@
                 <span>view all live dates</span>
             </button>
         </div>
+        <!-- /sezione live dates -->
 
     </main>
 </template>
@@ -228,11 +236,6 @@ export default {
                 hover[index].classList.add('not-active');
                 text[index].classList.add('active-text');
                 text[index].classList.remove('not-active-text');
-            } else {
-                hover[index].classList.remove('not-active');
-                hover[index].classList.add('active');
-                text[index].classList.remove('active-text');
-                text[index].classList.add('not-active-text');
             }
         },
         getHover(index){
@@ -263,6 +266,7 @@ export default {
 
 <style lang="scss">
 @import "../assets/scss/style.scss";
+    // main container
     .main-container {
         background-color: $backgroundMain;
         color: $white;
@@ -371,6 +375,7 @@ export default {
             width: 100%;
         }
     }
+    // main container music
     .main-container.music {
         background-color: $backgroundMusicIsLife;
     }
@@ -385,6 +390,7 @@ export default {
         left: 50%;
         transform: translateX(-50%);
     }
+    // video container
     .video-container {
         background-image: url('../assets/img/home-testimonial-parallax.jpg');
         background-position-y: 50%;
@@ -439,6 +445,7 @@ export default {
             }
         }
     }
+    // sezione date
     .date-list {
         list-style-type: none;
         margin: 0 auto;

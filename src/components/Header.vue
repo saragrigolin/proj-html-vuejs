@@ -1,7 +1,10 @@
 <template>
     <header>
         <div class="container-fluid my_fluid p-0 position-relative">
+            <!-- navbar -->
             <Navbar />
+            <!-- /navbar -->
+            <!-- jumbotron -->
             <div class="jumbo-container">
                 <h1 class="m-0 mb-4">Untold Stories</h1>
                 <span class="cursive">There is an untold story behind every favorite song.</span>
@@ -10,6 +13,7 @@
                     <button type="button" class="transparent btn">live dates</button>
                 </div>
             </div>
+            <!-- /jumbotron -->
         </div>
     </header>
 </template>
@@ -52,7 +56,7 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    
+    // jumbotron
     .jumbo-container {
         text-align: center;
         color: $white;
